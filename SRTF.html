@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>SRTF </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+ 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="main.js"></script>
+
+ 
+</head>
+
+<body>
+
+  
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+      <div class="container d-flex justify-content-between align-items-center">
+  
+        <div class="logo">
+          <h1 class="text-light"><a href="index.html"><span>Grp 7 Operating System Finals Project</span></a></h1>
+        </div>
+  
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="active " href="index.html">Home</a></li>
+            <li><a href="FCFS.html">FCFS</a></li>
+            <li><a href="SRTF.html">SRTF</a></li>
+            <li><a href="CScan.html">CScan</a></li>
+            <li><a href="team.html">Team</a></li>
+          
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+  
+      </div>
+    </header>
+  
+    <main id="main">
+     <section class="os-about section-bg" data-aos="fade-up" date-aos-delay="200">
+      <div class="container">
+        <div class="row">
+          <center><div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+              <h3 class="title"><a href="">What is SRTF Scheduling</a></h3>
+              <p class="description"> Shortest remaining time first is the preemptive version of the Shortest job first. in the Shortest Remaining Time First (SRTF) 
+                scheduling method, the process that has the least amount of time left to finish is chosen to run. Processes always continue until they finish or a new 
+                process that takes less time is added. This is because the process that is presently executing is the one that by definition has the least amount of 
+                time left, and that time should only decrease as execution moves forward. Because the overhead costs of the SRTF algorithm are not taken into account,
+                 it processes tasks quicker than the SJF method. 
+
+                <br></br>
+                The advantages of SRTF are  short processes are handled very fast and the system also requires very little overhead since it only makes a decision when a 
+                process completes or a new process is added. The disadvantages of SRTF are like the shortest job first, it also has the potential for process starvation and 
+                ong processes may be held off indefinitely if short processes are continually added. 
+                
+                <br></br>
+                If you are curious about how SRTF works, try the "Shortest Remaining Time First (SRTF) Scheduler Application" below.
+                </p>
+            </div></center>
+  
+  
+          </div>
+        </div>
+  
+      </div>
+    </section>
+
+    <div class="container2">
+      <div class="header">
+          <h2>Shortest Remaining Time First (SRTF) Scheduler</h2>
+      </div>
+
+      <div class="input-section">
+          <!--input for number of processes-->
+          <label for="numProcesses">Number of Processes:</label>
+          <input type="number" id="numProcesses" min="1">
+
+          <!--button to get inputs-->
+          <button onclick="getInputs()">Submit</button>
+
+          <!--input for arrival and burst time for each process-->
+          <div id="inputForm" style="display: none;">
+              <h3>Enter Arrival Time and Burst Time for Each Process:</h3>
+
+              <!--table for process, arrival time, and burst time-->
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Process</th>
+                          <th>Arrival Time</th>
+                          <th>Burst Time</th>
+                      </tr>
+                  </thead>
+                  <tbody id="inputTableBody"></tbody>
+              </table>
+              <br></br>
+
+              <!--button to calculate SRTF-->
+              <button onclick="calculateSRTF()">Calculate SRTF</button>
+
+              <!--button to clear inputs-->
+              <button onclick="clearInputs()" style="background-color: red;">Clear Inputs</button>
+          </div>
+      </div>
+
+      <!--output table-->
+      <div id="output-section" style="display: none;">
+          <h3>Output:</h3>
+          <table id="outputTable"></table>
+      </div>
+  </div>
+
+  <br><br><br>
+  
+      
+  
+    
+  
+  
+    
+  
+  </main>
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+        <svg class="bi" width="30" height="44"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <span class="mb-3 mb-md-0 text-body-secondary">REFERENCES: <br></br>
+        CPU Scheduling in Operating Systems. Retrieved from: https://www.geeksforgeeks.org/cpu-scheduling-in-operating-systems/<br></br>
+        Shortest Remaining Time First (Preemptive SJF) Scheduling Algorithm. Retrieved from: https://www.geeksforgeeks.org/shortest-remaining-time-first-preemptive-sjf-scheduling-algorithm/</span>
+    </div>
+  </footer>
+  
+    
+  
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+   
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+  
+    
+    <script src="assets/js/main.js"></script>
+  
+  </body>
+  
+  </html>

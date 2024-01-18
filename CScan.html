@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>CScan </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap"
+    rel="stylesheet">
+
+
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+  <link href="assets/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="index.html"><span>Grp 7 Operating System Finals Project</span></a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="active " href="index.html">Home</a></li>
+          <li><a href="FCFS.html">FCFS</a></li>
+          <li><a href="SRTF.html">SRTF</a></li>
+          <li><a href="CScan.html">CScan</a></li>
+          <li><a href="team.html">Team</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- html elements for the cscan description -->
+  <main id="main">
+    <section class="os-about section-bg" data-aos="fade-up" date-aos-delay="200">
+      <div class="container">
+        <div class="row">
+          <center>
+            <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+              <h3 class="title"><a href="">What is C-Scan</a></h3>
+              <p class="description"> A modified variation of the SCAN Disk Scheduling Algorithm, the Circular SCAN
+                (C-SCAN) Scheduling Algorithm addresses the
+                inefficiencies of the SCAN algorithm by providing more consistent service to the requests. Similar to
+                the Elevator Algorithm SCAN, C-SCAN shifts
+                the head from one end to the other, fulfilling all demands. But as soon as the head reaches the other
+                end, it instantly goes back to the disk's
+                beginning, service no requests along the journey, and then it begins servicing all over again at the
+                beginning. Because it effectively interprets
+                the cylinders as a circular list that loops around from the last cylinder to the first, this is also
+                known as the "Circular Elevator Algorithm."
+
+                <br></br>
+                The advantages of C-Scan are it works well with moderate to heavy loads and it provides better response
+                time and uniform waiting time. The disadvantages
+                of C-Scan are it may not be fair to service requests for tracks at the extreme end and it has more seek
+                movements as compared to the SCAN Algorithm.
+                <br></br>
+                If you are curious about how C-Scan works, try the "Circular-Scan Scheduler Application" below.
+              </p>
+            </div>
+          </center>
+        </div>
+      </div>
+      </div>
+    </section>
+
+
+    <!-- html elements for user inputs -->
+    <div class="container2">
+      <h2>Circular-Scan Scheduler Application</h2>
+      <br></br>
+      <!-- current position input -->
+      <label for="currentPosition">Current Position:</label>
+      <input type="number" id="currentPosition" min="0">
+      <!-- track size input -->
+      <label for="trackSize">Track Size:</label>
+      <input type="number" id="trackSize" min="1">
+      <!-- number of requests with specifications  -->
+      <label for="numRequests">Number of Requests (max 10):</label> 
+      <input type="number" id="numRequests" min="1" max="10">
+      <br></br>
+      
+      <div id="requestInputs"></div>
+      <!-- button for dynamically generating text inputs -->
+      <button onclick="generateRequestInputs()">Generate Request Inputs</button>
+      <!-- button to perform cscan -->
+      <button onclick="calculateCircularScan()">Calculate Circular-Scan</button>
+      <br></br>
+      <!-- html elements for displaying results -->
+      <div id="resultsContainer">
+        <h3>Results:</h3>
+        <p>Total Head Movement: <span id="totalHeadMovement"></span></p>
+        <p>Seek Time: <span id="seekTime"></span></p>
+        <p>Seek Sequence: <span id="seekSequence"></span></p>
+      </div>
+      <!-- button to input again -->
+      <button id="resetButton" onclick="resetInputs()">Input Again</button>
+    </div>
+    
+    <br><br><br>
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <svg class="bi" width="30" height="44">
+          <use xlink:href="#bootstrap"></use>
+        </svg>
+        </a>
+        <span class="mb-3 mb-md-0 text-body-secondary">REFERENCES: <br></br>
+          C-Scan Disk Scheduling Algorithm. Retrieved from:
+          https://www.geeksforgeeks.org/c-scan-disk-scheduling-algorithm/</span>
+      </div>
+    </footer>
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <script src="assets/js/main.js"></script>
+
+  </main>
+
+
+</body>
+
+</html>
